@@ -60,17 +60,41 @@
 		F10EAD252780833C00F26D3F /* AR_Card */ = {
 			isa = PBXGroup;
 			children = (
+				F1A0BD9C2780A62F0000950D /* Controller */,
+				F1A0BD9B2780A6270000950D /* View */,
+				F1A0BD9A2780A61B0000950D /* Model */,
 				F10EAD262780833C00F26D3F /* AppDelegate.swift */,
 				F10EAD282780833C00F26D3F /* art.scnassets */,
-				F10EAD2A2780833C00F26D3F /* ViewController.swift */,
-				F1A0BD962780917B0000950D /* HomeViewController.swift */,
-				F1A0BD98278095AD0000950D /* CardData.swift */,
-				F10EAD2C2780833C00F26D3F /* Main.storyboard */,
 				F10EAD2F2780833D00F26D3F /* Assets.xcassets */,
-				F10EAD312780833D00F26D3F /* LaunchScreen.storyboard */,
 				F10EAD342780833D00F26D3F /* Info.plist */,
 			);
 			path = AR_Card;
+			sourceTree = "<group>";
+		};
+		F1A0BD9A2780A61B0000950D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F1A0BD98278095AD0000950D /* CardData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F1A0BD9B2780A6270000950D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F10EAD2C2780833C00F26D3F /* Main.storyboard */,
+				F10EAD312780833D00F26D3F /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F1A0BD9C2780A62F0000950D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F1A0BD962780917B0000950D /* HomeViewController.swift */,
+				F10EAD2A2780833C00F26D3F /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

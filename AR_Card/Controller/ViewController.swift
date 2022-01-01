@@ -27,7 +27,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         planeNode.position = SCNVector3(0,0.1,-0.5)
         
         // 카드 내용
-        let textGeo = SCNText(string: "카드카드", extrusionDepth: 1.0)
+        let textGeo = SCNText(string: myCard.cardName, extrusionDepth: 1.0)
         textGeo.firstMaterial?.diffuse.contents = UIColor.black.cgColor
         
         

@@ -20,11 +20,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         
         // 카드 만들기
-        let planeGeo = SCNPlane(width: 0.1, height: 0.1)
+        //let planeGeo = SCNPlane(width: 0.1, height: 0.1)
+        let planeGeo = SCNBox(width: 0.1, height: 0.1, length: 0.001, chamferRadius: 0.001)
         planeGeo.firstMaterial?.diffuse.contents = UIColor.yellow.cgColor
         
         let planeNode = SCNNode(geometry: planeGeo)
-        planeNode.position = SCNVector3(0,0.1,-0.5)
+        planeNode.position = SCNVector3(0,0.1,-0.3)
         
         // 카드 내용
         let textGeo = SCNText(string: myCard.cardName, extrusionDepth: 1.0)
@@ -32,12 +33,28 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         
         let textNode = SCNNode(geometry: textGeo)
-        textNode.position = SCNVector3(planeNode.worldPosition.x/2, planeNode.worldPosition.y/2, planeNode.worldPosition.z)
+        textNode.position = SCNVector3(0,0,0.001)
         textNode.scale = SCNVector3(0.001,0.001,0.001)
         
+        //CVC 내용
+        
+        let CVCGeo = SCNText(string: "\(myCard.CVCNumber)", extrusionDepth: 1.0)
+        CVCGeo.firstMaterial?.diffuse.contents = UIColor.black.cgColor
+        
+        let CVCNode = SCNNode(geometry: CVCGeo)
+        CVCNode.scale = SCNVector3(0.001, 0.001, 0.001)
+        CVCNode.position = SCNVector3(0,0,-0.001)
+        
+        
+        //글자 돌리기
+        CVCNode.eulerAngles.y = -.pi
+        
+        
+        planeNode.addChildNode(CVCNode)
+        planeNode.addChildNode(textNode)
         
         sceneView.scene.rootNode.addChildNode(planeNode)
-        sceneView.scene.rootNode.addChildNode(textNode)
+        
      
     }
     

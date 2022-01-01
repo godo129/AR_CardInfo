@@ -14,4 +14,4 @@ struct cardManager {
     var bankName : String
 }
 
-var myCard = cardManager(cardNumber: 0, cardName: "", CVCNumber: 0, bankName: "")
+var myCard = cardManager(cardNumber: 0, cardName: "", CVCNumber: 789, bankName: "")

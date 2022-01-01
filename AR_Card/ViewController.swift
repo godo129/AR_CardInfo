@@ -19,6 +19,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the view's delegate
         sceneView.delegate = self
         
+        // 카드 만들기 
+        let planeGeo = SCNPlane(width: 0.1, height: 0.1)
+        planeGeo.firstMaterial?.diffuse.contents = UIColor.yellow.cgColor
+        
+        let planeNode = SCNNode(geometry: planeGeo)
+        planeNode.position = SCNVector3(0,0.1,-0.5)
+        
+        sceneView.scene.rootNode.addChildNode(planeNode)
+        
      
     }
     

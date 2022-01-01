@@ -19,15 +19,25 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the view's delegate
         sceneView.delegate = self
         
-        // 카드 만들기 
+        // 카드 만들기
         let planeGeo = SCNPlane(width: 0.1, height: 0.1)
         planeGeo.firstMaterial?.diffuse.contents = UIColor.yellow.cgColor
         
         let planeNode = SCNNode(geometry: planeGeo)
         planeNode.position = SCNVector3(0,0.1,-0.5)
         
-        sceneView.scene.rootNode.addChildNode(planeNode)
+        // 카드 내용
+        let textGeo = SCNText(string: "카드카드", extrusionDepth: 1.0)
+        textGeo.firstMaterial?.diffuse.contents = UIColor.black.cgColor
         
+        
+        let textNode = SCNNode(geometry: textGeo)
+        textNode.position = SCNVector3(planeNode.worldPosition.x/2, planeNode.worldPosition.y/2, planeNode.worldPosition.z)
+        textNode.scale = SCNVector3(0.001,0.001,0.001)
+        
+        
+        sceneView.scene.rootNode.addChildNode(planeNode)
+        sceneView.scene.rootNode.addChildNode(textNode)
      
     }
     

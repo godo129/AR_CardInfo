@@ -96,7 +96,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let touchLocation = recognizer.location(in: sceneView)
         let hitResults = sceneView.hitTest(touchLocation, options: [:])
         n += 1
-        if !hitResults.isEmpty {
+        if !hitResults.isEmpty && !(hitResults.first?.node.childNodes.isEmpty)!{
             let node = hitResults[0].node
             node.transform = SCNMatrix4MakeRotation(.pi*Float(n), 0, 1, 0)
             node.position = SCNVector3(0,0.1,-0.3)

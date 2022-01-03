@@ -53,6 +53,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         planeNode.addChildNode(CVCNode)
         planeNode.addChildNode(textNode)
         
+        //카드 돌리기 
+        planeNode.transform = SCNMatrix4MakeRotation(.pi, 0, 1, 0)
+        
         sceneView.scene.rootNode.addChildNode(planeNode)
         
      

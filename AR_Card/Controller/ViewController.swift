@@ -13,6 +13,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
+    private var planeNode = SCNNode()
+    var n = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +27,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let planeGeo = SCNBox(width: 0.1, height: 0.1, length: 0.001, chamferRadius: 0.001)
         planeGeo.firstMaterial?.diffuse.contents = UIColor.yellow.cgColor
         
-        let planeNode = SCNNode(geometry: planeGeo)
+        planeNode.geometry = planeGeo
         planeNode.position = SCNVector3(0,0.1,-0.3)
         
         // 카드 내용
@@ -53,13 +56,18 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         planeNode.addChildNode(CVCNode)
         planeNode.addChildNode(textNode)
         
-        //카드 돌리기 
+        //카드 돌리기
         planeNode.transform = SCNMatrix4MakeRotation(.pi, 0, 1, 0)
+        planeNode.position = SCNVector3(0,0.1,-0.3)
+        
         
         sceneView.scene.rootNode.addChildNode(planeNode)
         
+        gestureRecognizer()
+        
      
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -77,6 +85,25 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Pause the view's session
         sceneView.session.pause()
     }
-
+    
+    private func gestureRecognizer() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        self.sceneView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc private func tapped(recognizer: UITapGestureRecognizer) {
+        let sceneView = recognizer.view as! SCNView
+        let touchLocation = recognizer.location(in: sceneView)
+        let hitResults = sceneView.hitTest(touchLocation, options: [:])
+        n += 1
+        if !hitResults.isEmpty {
+            let node = hitResults[0].node
+            node.transform = SCNMatrix4MakeRotation(.pi*Float(n), 0, 1, 0)
+            node.position = SCNVector3(0,0.1,-0.3)
+            
+                        
+        }
+    }
+    
 }
 

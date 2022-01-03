@@ -13,6 +13,7 @@
 		F10EAD2E2780833C00F26D3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F10EAD2C2780833C00F26D3F /* Main.storyboard */; };
 		F10EAD302780833D00F26D3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10EAD2F2780833D00F26D3F /* Assets.xcassets */; };
 		F10EAD332780833D00F26D3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F10EAD312780833D00F26D3F /* LaunchScreen.storyboard */; };
+		F1607467278326E500B6F872 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1607466278326E500B6F872 /* CardModel.swift */; };
 		F1A0BD972780917B0000950D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A0BD962780917B0000950D /* HomeViewController.swift */; };
 		F1A0BD99278095AD0000950D /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A0BD98278095AD0000950D /* CardData.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		F10EAD2F2780833D00F26D3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F10EAD322780833D00F26D3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F10EAD342780833D00F26D3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1607466278326E500B6F872 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		F1A0BD962780917B0000950D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F1A0BD98278095AD0000950D /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				F1A0BD98278095AD0000950D /* CardData.swift */,
+				F1607466278326E500B6F872 /* CardModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				F1A0BD99278095AD0000950D /* CardData.swift in Sources */,
 				F10EAD272780833C00F26D3F /* AppDelegate.swift in Sources */,
 				F1A0BD972780917B0000950D /* HomeViewController.swift in Sources */,
+				F1607467278326E500B6F872 /* CardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

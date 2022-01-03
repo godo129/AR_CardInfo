@@ -7,11 +7,6 @@
 
 import Foundation
 
-struct cardManager {
-    var cardNumber: Int
-    var cardName : String
-    var CVCNumber : Int
-    var bankName : String
-}
+
 
 var myCard = cardManager(cardNumber: 0, cardName: "", CVCNumber: 789, bankName: "")

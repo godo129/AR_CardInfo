@@ -18,6 +18,15 @@ class HomeViewController: UIViewController {
         ARButton.frame = CGRect(x: 100, y: 200, width: 100, height: 100)
         return ARButton
     }()
+    
+    private let AddButton: UIButton = {
+        let ARButton = UIButton()
+        ARButton.setTitle("카드 추가", for: .normal)
+        ARButton.setTitleColor(.black, for: .normal)
+        ARButton.backgroundColor = .yellow
+        ARButton.frame = CGRect(x: 100, y: 400, width: 100, height: 100)
+        return ARButton
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +34,11 @@ class HomeViewController: UIViewController {
         cardText.placeholder = "카드에 넣은 텍스트를 입력해 주세요."
         
         ARButton.addTarget(self, action: #selector(ARButtonTapped), for: .touchUpInside)
+        AddButton.addTarget(self, action: #selector(AddButtonTapped), for: .touchUpInside)
         
         view.addSubview(ARButton)
         view.addSubview(cardText)
+        view.addSubview(AddButton)
 
     }
     
@@ -45,6 +56,12 @@ class HomeViewController: UIViewController {
         }
         
         
+    }
+    
+    @objc func AddButtonTapped() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "AddCardView")
+        vc?.modalTransitionStyle = .flipHorizontal
+        present(vc!, animated: false, completion: nil)
     }
     
 

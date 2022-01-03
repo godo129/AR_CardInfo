@@ -51,7 +51,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="86"/>
+            <point key="canvasLocation" x="103" y="51"/>
+        </scene>
+        <!--Card Add View Controller-->
+        <scene sceneID="jhD-Jg-wDr">
+            <objects>
+                <viewController storyboardIdentifier="AddCardView" id="GWA-p0-STI" customClass="CardAddViewController" customModule="AR_Card" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HgD-JH-95Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ihL-z6-hFg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LL1-RE-HKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="661" y="-276"/>
         </scene>
     </scenes>
     <resources>

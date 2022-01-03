@@ -9,4 +9,4 @@ import Foundation
 
 
 
-var myCard = cardManager(cardNumber: 0, cardName: "", CVCNumber: 789, bankName: "")
+var myCard = cardManager(cardFirstNumber: 0000, cardSecondNumber: 0000, cardThirdNumber: 0000, cardFourthNumber: 0000,cardName: "", CVCNumber: 789, bankName: "")

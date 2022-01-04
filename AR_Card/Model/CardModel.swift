@@ -8,11 +8,13 @@
 import Foundation
 
 struct cardManager {
-    var cardFirstNumber: Int
-    var cardSecondNumber: Int
-    var cardThirdNumber: Int
-    var cardFourthNumber: Int
+    var cardFirstNumber: String
+    var cardSecondNumber: String
+    var cardThirdNumber: String
+    var cardFourthNumber: String
+    var monthOfLimit : String
+    var yearOfLimit : String
     var cardName : String
-    var CVCNumber : Int
+    var CVCNumber : String
     var bankName : String
 }

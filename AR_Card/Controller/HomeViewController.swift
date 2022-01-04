@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    private let cardText = UITextField(frame: CGRect(x: 100, y: 50, width: 100, height: 100))
+//    private let cardText = UITextField(frame: CGRect(x: 100, y: 50, width: 100, height: 100))
     private let ARButton: UIButton = {
         let ARButton = UIButton()
         ARButton.setTitle("Go", for: .normal)
@@ -24,36 +24,40 @@ class HomeViewController: UIViewController {
         ARButton.setTitle("카드 추가", for: .normal)
         ARButton.setTitleColor(.black, for: .normal)
         ARButton.backgroundColor = .yellow
-        ARButton.frame = CGRect(x: 100, y: 400, width: 100, height: 100)
+        ARButton.frame = CGRect(x: 100, y: 300, width: 100, height: 100)
         return ARButton
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cardText.placeholder = "카드에 넣은 텍스트를 입력해 주세요."
+//        cardText.placeholder = "카드에 넣은 텍스트를 입력해 주세요."
         
         ARButton.addTarget(self, action: #selector(ARButtonTapped), for: .touchUpInside)
         AddButton.addTarget(self, action: #selector(AddButtonTapped), for: .touchUpInside)
         
         view.addSubview(ARButton)
-        view.addSubview(cardText)
+//        view.addSubview(cardText)
         view.addSubview(AddButton)
 
     }
     
     @objc func ARButtonTapped() {
         
-        if cardText.hasText {
-            myCard.cardName = cardText.text!
-            let vc = storyboard?.instantiateViewController(withIdentifier: "ARView")
-            vc?.modalTransitionStyle = .flipHorizontal
-            present(vc!, animated: false, completion: nil)
-        } else {
-            let alert = UIAlertController(title: "", message: "텍스트를 입력해주세요", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alert, animated: false, completion: nil)
-        }
+//        myCard.cardName = cardText.text!
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ARView")
+        vc?.modalTransitionStyle = .flipHorizontal
+        present(vc!, animated: false, completion: nil)
+//        if cardText.hasText {
+//            myCard.cardName = cardText.text!
+//            let vc = storyboard?.instantiateViewController(withIdentifier: "ARView")
+//            vc?.modalTransitionStyle = .flipHorizontal
+//            present(vc!, animated: false, completion: nil)
+//        } else {
+//            let alert = UIAlertController(title: "", message: "텍스트를 입력해주세요", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+//            self.present(alert, animated: false, completion: nil)
+//        }
         
         
     }

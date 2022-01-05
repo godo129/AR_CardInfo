@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92CA1D51536A3B41AE099F7C /* Pods_AR_Card.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4FA857A2016232002D317FA /* Pods_AR_Card.framework */; };
 		F10EAD272780833C00F26D3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10EAD262780833C00F26D3F /* AppDelegate.swift */; };
 		F10EAD292780833C00F26D3F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F10EAD282780833C00F26D3F /* art.scnassets */; };
 		F10EAD2B2780833C00F26D3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10EAD2A2780833C00F26D3F /* ViewController.swift */; };
@@ -15,11 +16,15 @@
 		F10EAD332780833D00F26D3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F10EAD312780833D00F26D3F /* LaunchScreen.storyboard */; };
 		F1607467278326E500B6F872 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1607466278326E500B6F872 /* CardModel.swift */; };
 		F16074692783296D00B6F872 /* CardAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16074682783296D00B6F872 /* CardAddViewController.swift */; };
+		F17D05682785352000C4287B /* CardInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17D05672785352000C4287B /* CardInfoViewController.swift */; };
 		F1A0BD972780917B0000950D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A0BD962780917B0000950D /* HomeViewController.swift */; };
 		F1A0BD99278095AD0000950D /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A0BD98278095AD0000950D /* CardData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A4FA857A2016232002D317FA /* Pods_AR_Card.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_Card.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70424B11FC7D7CAB1AAF90A /* Pods-AR_Card.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR_Card.release.xcconfig"; path = "Target Support Files/Pods-AR_Card/Pods-AR_Card.release.xcconfig"; sourceTree = "<group>"; };
+		AC62C616C8E4B5BD913F3F7E /* Pods-AR_Card.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR_Card.debug.xcconfig"; path = "Target Support Files/Pods-AR_Card/Pods-AR_Card.debug.xcconfig"; sourceTree = "<group>"; };
 		F10EAD232780833C00F26D3F /* AR_Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AR_Card.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10EAD262780833C00F26D3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F10EAD282780833C00F26D3F /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -30,6 +35,7 @@
 		F10EAD342780833D00F26D3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1607466278326E500B6F872 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		F16074682783296D00B6F872 /* CardAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAddViewController.swift; sourceTree = "<group>"; };
+		F17D05672785352000C4287B /* CardInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoViewController.swift; sourceTree = "<group>"; };
 		F1A0BD962780917B0000950D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F1A0BD98278095AD0000950D /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -39,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92CA1D51536A3B41AE099F7C /* Pods_AR_Card.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B9F7588E7CA23BC8029000B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC62C616C8E4B5BD913F3F7E /* Pods-AR_Card.debug.xcconfig */,
+				A70424B11FC7D7CAB1AAF90A /* Pods-AR_Card.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EB0658CDA096F1DC566BCAC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4FA857A2016232002D317FA /* Pods_AR_Card.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F10EAD1A2780833C00F26D3F = {
 			isa = PBXGroup;
 			children = (
 				F10EAD252780833C00F26D3F /* AR_Card */,
 				F10EAD242780833C00F26D3F /* Products */,
+				B9F7588E7CA23BC8029000B9 /* Pods */,
+				EB0658CDA096F1DC566BCAC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +125,7 @@
 				F1A0BD962780917B0000950D /* HomeViewController.swift */,
 				F10EAD2A2780833C00F26D3F /* ViewController.swift */,
 				F16074682783296D00B6F872 /* CardAddViewController.swift */,
+				F17D05672785352000C4287B /* CardInfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -110,9 +137,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F10EAD372780833D00F26D3F /* Build configuration list for PBXNativeTarget "AR_Card" */;
 			buildPhases = (
+				BE5140E2F3C674EB18849B50 /* [CP] Check Pods Manifest.lock */,
 				F10EAD1F2780833C00F26D3F /* Sources */,
 				F10EAD202780833C00F26D3F /* Frameworks */,
 				F10EAD212780833C00F26D3F /* Resources */,
+				EECC211DEA9F8195861272E3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,11 +198,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BE5140E2F3C674EB18849B50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AR_Card-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EECC211DEA9F8195861272E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AR_Card/Pods-AR_Card-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AR_Card/Pods-AR_Card-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AR_Card/Pods-AR_Card-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F10EAD1F2780833C00F26D3F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F17D05682785352000C4287B /* CardInfoViewController.swift in Sources */,
 				F16074692783296D00B6F872 /* CardAddViewController.swift in Sources */,
 				F10EAD2B2780833C00F26D3F /* ViewController.swift in Sources */,
 				F1A0BD99278095AD0000950D /* CardData.swift in Sources */,
@@ -323,6 +395,7 @@
 		};
 		F10EAD382780833D00F26D3F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC62C616C8E4B5BD913F3F7E /* Pods-AR_Card.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -342,6 +415,7 @@
 		};
 		F10EAD392780833D00F26D3F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A70424B11FC7D7CAB1AAF90A /* Pods-AR_Card.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

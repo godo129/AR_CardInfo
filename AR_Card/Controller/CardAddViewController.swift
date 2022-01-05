@@ -8,6 +8,21 @@
 import UIKit
 
 class CardAddViewController: UIViewController {
+
+
+    private let imageChangeButton: UIButton = {
+        let imageChangeButton = UIButton()
+        imageChangeButton.setTitle("사진 선택", for: .normal)
+        imageChangeButton.setTitleColor(.black, for: .normal)
+        imageChangeButton.backgroundColor = .orange
+        return imageChangeButton
+    }()
+    
+    private let cardImageView: UIImageView = {
+        let cardImageView = UIImageView()
+        cardImageView.layer.cornerRadius = 100
+        return cardImageView
+    }()
     
     private let Title: UILabel = {
         let title = UILabel()
@@ -118,8 +133,10 @@ class CardAddViewController: UIViewController {
         cvcNumTextField.text = "\(myCard.CVCNumber)"
         bankNameTextField.text = "\(myCard.bankName)"
         cardNameTextField.text = "\(myCard.cardName)"
+        cardImageView.image = myCard.cardImage
         
         recordButton.addTarget(self, action: #selector(recordButtonTapped), for: .touchUpInside)
+        imageChangeButton.addTarget(self, action: #selector(imageChangeButtonTapped), for: .touchUpInside)
         
         view.addSubview(Title)
         view.addSubview(firstNumTextField)
@@ -132,6 +149,8 @@ class CardAddViewController: UIViewController {
         view.addSubview(bankNameTextField)
         view.addSubview(cardNameTextField)
         view.addSubview(recordButton)
+        view.addSubview(imageChangeButton)
+        view.addSubview(cardImageView)
         
         print(myCard)
 
@@ -160,8 +179,47 @@ class CardAddViewController: UIViewController {
         guard let bankName = bankNameTextField.text else {return}
         myCard.bankName = bankName
         guard let cardName = cardNameTextField.text else {return}
-        print(cardName)
         myCard.cardName = cardName
+    }
+    
+    private func cameraOption() {
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .camera
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    private func albumOption() {
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        present(imagePicker, animated: true, completion: nil)
+        
+    }
+    
+    
+    @objc private func imageChangeButtonTapped() {
+        let alert = UIAlertController(title: "카드 이미지 선택", message: "", preferredStyle: .actionSheet)
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        let album = UIAlertAction(title: "앨범", style: .default) { [weak self] _ in
+            self?.albumOption()
+        }
+        let camera = UIAlertAction(title: "카메라", style: .default) { [weak self] _ in
+            self?.cameraOption()
+        }
+        
+        
+        alert.addAction(cancel)
+        alert.addAction(album)
+        alert.addAction(camera)
+
+        present(alert, animated: false, completion: nil)
+  
     }
     
     override func viewDidLayoutSubviews() {
@@ -178,7 +236,10 @@ class CardAddViewController: UIViewController {
         cvcNumTextField.frame = CGRect(x: 20, y: 200, width: 100, height: 50)
         bankNameTextField.frame = CGRect(x: 20, y: 250, width: 100, height: 50)
         cardNameTextField.frame = CGRect(x: 20, y: 300, width: 100, height: 50)
-        recordButton.frame = CGRect(x: 100, y: 250, width: 100, height: 100)
+        recordButton.frame = CGRect(x: 100, y: 250, width: 100, height: 50)
+        
+        imageChangeButton.frame = CGRect(x: 200, y: 250, width: 100, height: 50)
+        cardImageView.frame = CGRect(x: 300, y: 300, width: 200, height: 200)
     }
 
     
@@ -215,4 +276,21 @@ extension CardAddViewController: UITextFieldDelegate {
 
     }
     
+}
+
+//MARK: - UIImagePickerController, UINavigationController Delegate
+extension CardAddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        var newImage : UIImage? = nil
+        
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            newImage = image
+        } else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            newImage = image
+        }
+        myCard.cardImage = newImage!
+        cardImageView.image = newImage
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
 }

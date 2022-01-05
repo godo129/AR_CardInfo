@@ -25,7 +25,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // 카드 만들기
         //let planeGeo = SCNPlane(width: 0.1, height: 0.1)
         let planeGeo = SCNBox(width: 0.1, height: 0.1, length: 0.001, chamferRadius: 0.001)
-        planeGeo.firstMaterial?.diffuse.contents = UIColor.yellow.cgColor
+        planeGeo.firstMaterial?.diffuse.contents = UIImage(named: "image1")
         
         planeNode.geometry = planeGeo
         planeNode.position = SCNVector3(0,0.1,-0.3)

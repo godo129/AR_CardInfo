@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 
 var myCard = cardManager(cardFirstNumber: "0000",
@@ -17,4 +17,9 @@ var myCard = cardManager(cardFirstNumber: "0000",
                          yearOfLimit: "01",
                          cardName: "내카드1",
                          CVCNumber: "789",
-                         bankName: "국민")
+                         bankName: "국민",
+                         cardImage: UIImage(named: "image1")!)
+
+var myCardList = [cardManager]()
+
+var myCardListIdx = 0

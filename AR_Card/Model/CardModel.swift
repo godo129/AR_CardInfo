@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct cardManager {
     var cardFirstNumber: String
@@ -17,4 +18,5 @@ struct cardManager {
     var cardName : String
     var CVCNumber : String
     var bankName : String
+    var cardImage : UIImage
 }

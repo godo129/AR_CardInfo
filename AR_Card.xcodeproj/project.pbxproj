@@ -19,6 +19,7 @@
 		F17D05682785352000C4287B /* CardInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17D05672785352000C4287B /* CardInfoViewController.swift */; };
 		F1A0BD972780917B0000950D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A0BD962780917B0000950D /* HomeViewController.swift */; };
 		F1A0BD99278095AD0000950D /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A0BD98278095AD0000950D /* CardData.swift */; };
+		F1EEA6E927866B520043D40B /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEA6E827866B520043D40B /* NotificationData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F17D05672785352000C4287B /* CardInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoViewController.swift; sourceTree = "<group>"; };
 		F1A0BD962780917B0000950D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F1A0BD98278095AD0000950D /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
+		F1EEA6E827866B520043D40B /* NotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				F1A0BD98278095AD0000950D /* CardData.swift */,
 				F1607466278326E500B6F872 /* CardModel.swift */,
+				F1EEA6E827866B520043D40B /* NotificationData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			files = (
 				F17D05682785352000C4287B /* CardInfoViewController.swift in Sources */,
 				F16074692783296D00B6F872 /* CardAddViewController.swift in Sources */,
+				F1EEA6E927866B520043D40B /* NotificationData.swift in Sources */,
 				F10EAD2B2780833C00F26D3F /* ViewController.swift in Sources */,
 				F1A0BD99278095AD0000950D /* CardData.swift in Sources */,
 				F10EAD272780833C00F26D3F /* AppDelegate.swift in Sources */,

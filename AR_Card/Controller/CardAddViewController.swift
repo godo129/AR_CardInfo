@@ -8,7 +8,18 @@
 import UIKit
 
 class CardAddViewController: UIViewController {
-
+    
+    private var myCard = cardManager(cardFirstNumber: "0000",
+                             cardSecondNumber: "0000",
+                             cardThirdNumber: "0000",
+                             cardFourthNumber: "0000",
+                             monthOfLimit: "01",
+                             yearOfLimit: "01",
+                             cardName: "내카드",
+                             CVCNumber: "000",
+                             bankName: "00은행",
+                             cardImage: UIImage(named: "image1")!)
+    
 
     private let imageChangeButton: UIButton = {
         let imageChangeButton = UIButton()
@@ -116,6 +127,10 @@ class CardAddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if myCardListIdx != -1 {
+            myCard = myCardList[myCardListIdx]
+        }
+        
         firstNumTextField.delegate = self
         secondNumTextField.delegate = self
         thirdNumTextField.delegate = self
@@ -151,9 +166,11 @@ class CardAddViewController: UIViewController {
         view.addSubview(recordButton)
         view.addSubview(imageChangeButton)
         view.addSubview(cardImageView)
-        
-        print(myCard)
 
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.post(name: myCardInfoUpdateNoti, object: nil)
     }
     
     @objc private func recordButtonTapped() {
@@ -180,6 +197,13 @@ class CardAddViewController: UIViewController {
         myCard.bankName = bankName
         guard let cardName = cardNameTextField.text else {return}
         myCard.cardName = cardName
+        
+        if myCardListIdx == -1 {
+            myCardList.append(myCard)
+        } else {
+            myCardList[myCardListIdx] = myCard
+        }
+        
     }
     
     private func cameraOption() {

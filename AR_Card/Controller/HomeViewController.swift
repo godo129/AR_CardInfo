@@ -10,6 +10,8 @@ import FSPagerView
 
 class HomeViewController: UIViewController {
     
+    
+    
     private let CardView: FSPagerView = {
         let CardView = FSPagerView()
         CardView.transformer = FSPagerViewTransformer(type: .linear)
@@ -51,7 +53,15 @@ class HomeViewController: UIViewController {
         view.addSubview(CardInfoButton)
 //        view.addSubview(cardText)
         view.addSubview(AddButton)
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(cardViewUpdate), name: myCardInfoUpdateNoti, object: nil)
+        
 
+    }
+    
+    @objc func cardViewUpdate() {
+        CardView.reloadData()
     }
     
     @objc func CardInfoButtonTapped() {
@@ -73,6 +83,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc func AddButtonTapped() {
+        myCardListIdx = -1
         convertView(viewName: "AddCardView")
     }
     
@@ -87,13 +98,13 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: FSPagerViewDelegate, FSPagerViewDataSource {
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return 4
+        return myCardList.count
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-        cell.imageView?.image = UIImage(named: "image1")
-        cell.textLabel?.text = "카드카드"
+        cell.imageView?.image = myCardList[index].cardImage
+        cell.textLabel?.text = myCardList[index].cardName
         return cell
     }
     
@@ -101,6 +112,5 @@ extension HomeViewController: FSPagerViewDelegate, FSPagerViewDataSource {
         myCardListIdx = index
         convertView(viewName: "ARView")
     }
-    
     
 }

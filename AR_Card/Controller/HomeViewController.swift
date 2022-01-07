@@ -7,6 +7,7 @@
 
 import UIKit
 import FSPagerView
+import SnapKit
 
 class HomeViewController: UIViewController {
     
@@ -15,7 +16,6 @@ class HomeViewController: UIViewController {
     private let CardView: FSPagerView = {
         let CardView = FSPagerView()
         CardView.transformer = FSPagerViewTransformer(type: .linear)
-        CardView.frame = CGRect(x: 20, y: 200, width: 300, height: 300)
         return CardView
     }()
 //    private let cardText = UITextField(frame: CGRect(x: 100, y: 50, width: 100, height: 100))
@@ -23,8 +23,10 @@ class HomeViewController: UIViewController {
         let CardInfoButton = UIButton()
         CardInfoButton.setTitle("카드 관리", for: .normal)
         CardInfoButton.setTitleColor(.black, for: .normal)
-        CardInfoButton.backgroundColor = .orange
-        CardInfoButton.frame = CGRect(x: 20, y: 50, width: 100, height: 100)
+        CardInfoButton.layer.borderWidth = 1
+        CardInfoButton.layer.borderColor = UIColor.systemBlue.cgColor
+        CardInfoButton.layer.cornerRadius = 10
+//        CardInfoButton.frame = CGRect(x: 20, y: 50, width: 100, height: 100)
         return CardInfoButton
     }()
     
@@ -32,8 +34,11 @@ class HomeViewController: UIViewController {
         let ARButton = UIButton()
         ARButton.setTitle("카드 추가", for: .normal)
         ARButton.setTitleColor(.black, for: .normal)
-        ARButton.backgroundColor = .yellow
-        ARButton.frame = CGRect(x: 200, y: 50, width: 100, height: 100)
+//        ARButton.backgroundColor = .yellow
+        ARButton.layer.borderColor = UIColor.systemBlue.cgColor
+        ARButton.layer.cornerRadius = 10
+        ARButton.layer.borderWidth = 1 
+//        ARButton.frame = CGRect(x: 200, y: 50, width: 100, height: 100)
         return ARButton
     }()
 
@@ -58,6 +63,27 @@ class HomeViewController: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(cardViewUpdate), name: myCardInfoUpdateNoti, object: nil)
         
 
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        CardInfoButton.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(30)
+            make.left.equalTo(self.view.safeAreaLayoutGuide).offset(30)
+            make.size.equalTo(CGSize(width: 150, height: 40))
+        }
+        
+        AddButton.snp.makeConstraints { make in
+            make.top.equalTo(CardInfoButton)
+            make.right.equalTo(self.view.safeAreaLayoutGuide).offset(-30)
+            make.size.equalTo(CGSize(width: 150, height: 40))
+        }
+        
+        CardView.snp.makeConstraints { make in
+            make.center.equalTo(self.view)
+            make.size.equalTo(CGSize(width: 300, height: 300))
+        }
     }
     
     @objc func cardViewUpdate() {

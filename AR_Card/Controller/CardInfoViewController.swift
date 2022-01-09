@@ -57,8 +57,13 @@ class CardInfoViewController: UIViewController {
 extension CardInfoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath)
-        cell.imageView?.image = myCardList[indexPath.row].cardImage
+            
+        let img = myCardList[indexPath.row].cardImage.resizeImageWithHeight(newW: view.frame.size.width/3, newH: view.frame.size.height/5)
+
+        cell.imageView?.image = img
         cell.textLabel?.text = myCardList[indexPath.row].cardName
+        cell.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+
         return cell
     }
     
@@ -98,5 +103,18 @@ extension CardInfoViewController: UITableViewDelegate, UITableViewDataSource {
         cancelButton.backgroundColor = .green
         
         return [cancelButton,editButton,removeButton]
+    }
+}
+
+
+extension UIImage{
+    func resizeImageWithHeight(newW: CGFloat, newH: CGFloat) -> UIImage? {
+        UIGraphicsBeginImageContext(CGSize(width: newW, height: newH))
+        self.draw(in: CGRect(x: 0, y: 0, width: newW, height: newH))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
     }
 }

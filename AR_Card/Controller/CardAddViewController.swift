@@ -185,8 +185,26 @@ class CardAddViewController: UIViewController {
     }
     
     @objc private func recordButtonTapped() {
+        
+        if firstNumTextField.text?.count != 4 || secondNumTextField.text?.count != 4 || thirdNumTextField.text?.count != 4 || fourthNumTextField.text?.count != 4 {
+            
+            makeAlert(title: "카드 번호를 제대로 입력해 주세요!")
+            return
+        }
+        if cvcNumTextField.text?.count != 3 {
+            
+            makeAlert(title: "CVC 번호를 제대로 입력해 주세요!")
+            return
+        }
+        
         saveData()
         dismiss(animated: false)
+    }
+    
+    func makeAlert(title: String) {
+        let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
     func saveData() {
